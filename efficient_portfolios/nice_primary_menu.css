@@ -1,0 +1,236 @@
+/* $Id: nice_menus_default.css,v 1.6 2007/10/29 16:38:28 add1sun Exp $ */
+/*
+  This is the default layout template for nice menus, and will provide
+  a starting point for the look of your menus. To customize, it's
+  recommended to create a custom CSS file using this file as a template,
+  then configure the module to use your custom CSS file
+  (this is done in the global settings tab of the theme administration.)
+
+  To help understand the CSS, the HTML looks like this, where
+    x is a number;
+    TYPE is down/left/right;
+    PATH is the menu path such as node/343;
+    MID is the menu id such as 33):
+  <ul id='nice-menu-x' class='nice-menu nice-menu-TYPE'>
+    <li id='menu-MID' class='menu-path-PATH'><a href='#'>This is a menu item</a></li>
+    <li class='menuparent menu-path-PATH'><a href='#'>A submenu</a>
+      <ul...><li...>...</li>
+      </ul>
+    </li>
+    ...
+  </ul>
+
+  If you have more than one nice-menu and want to target a particular one,
+  use its id (e.g. ul#nice-menu-2).
+
+  See README.txt and the handbook page (http://drupal.org/node/185543)
+  for some CSS customization examples.
+*/
+
+/******************************
+ Global CSS for ALL menu types
+******************************/
+
+ul.nice-menu {
+  padding-left: 28px;
+  font-family: "Trebuchet MS";
+  text-transform: uppercase;
+  font-size: 1.2em !important; /* Equivalent for 16pt at 96 ppi - (16/12) * .9 = 1.05em */
+}
+
+ul.nice-menu,
+ul.nice-menu ul {
+  list-style: none;
+  margin: 0;
+}
+
+ul.nice-menu li {
+  border-top: 0;
+  float: left;
+  background-color: transparent;
+  border: none;
+  padding-right: 29px;
+}
+
+ul.nice-menu a, ul.nice-menu li a {
+  padding: 0 0 15px 0;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+ul.nice-menu a:hover, ul.nice-menu li a:hover {
+  color: #1ac9fc;
+}
+
+/** My Account **/
+ul.nice-menu li#menu-782 a {
+  background: transparent url(images/menu-arrows.png) right -114px no-repeat;
+  padding-right: 15px;
+  color: #f89939;
+}
+
+ul.nice-menu li#menu-782 a:hover {
+  color: #fff;
+}
+/** End My Account **/
+
+ul.nice-menu li li a {
+  color: #fff;
+  padding: 0;
+  padding-left: 15px;
+  text-decoration: none;
+  line-height: 28px;
+  font-size: .9em;
+}
+
+ul.nice-menu li li a:hover {
+  color: #00467f;
+}
+
+ul.nice-menu ul {
+  top: 1.8em;
+  border: 0;
+  border: none;
+  margin-right: 0;
+}
+
+ul.nice-menu ul li {
+  width: 20em;
+  background-color: transparent;
+  border: none;
+}
+
+/******************************
+ VERTICAL (left/right) menus
+******************************/
+
+/* This is the default width of all vertical menus. */
+ul.nice-menu-right, ul.nice-menu-left,
+ul.nice-menu-right li, ul.nice-menu-left li {
+  width: 12.5em;
+}
+
+/* VERTICAL menus where submenus pop RIGHT (default). */
+ul.nice-menu-right ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: 0;
+}
+
+ul.nice-menu-right ul ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: 0;
+}
+
+ul.nice-menu-right li.menuparent,
+ul.nice-menu-right li li.menuparent {
+  background-color: transparent;
+  background-image: none;
+}
+
+ul.nice-menu-right li.menuparent:hover,
+ul.nice-menu-right li.over,
+ul.nice-menu-right li li.menuparent:hover,
+ul.nice-menu-right li li.over {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* VERTICAL menus where submenus pop LEFT. */
+ul.nice-menu-left li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: 0;
+}
+
+ul.nice-menu-left li ul li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: 0;
+}
+
+ul.nice-menu-left li.menuparent,
+ul.nice-menu-left li li.menuparent {
+  background-color: transparent;
+  background-image: none;
+}
+
+ul.nice-menu-left li.menuparent:hover,
+ul.nice-menu-left li.over,
+ul.nice-menu-left li li.menuparent:hover,
+ul.nice-menu-left li li.over {
+  background-color: transparent;
+  background-image: none;
+}
+
+ul.nice-menu-left a, ul.nice-menu-left ul a {
+  padding-left: 14px;
+}
+
+/******************************
+ HORIZONTAL (down) menus
+******************************/
+
+ul.nice-menu-down {
+  float: left;
+  border: 0;
+}
+
+ul.nice-menu-down li {
+  border: none;
+}
+
+ul.nice-menu-down li li {
+  border: none;
+}
+
+ul.nice-menu-down ul {
+  left: 0;
+}
+
+ul.nice-menu-down ul li {
+  clear: both;
+}
+
+ul.nice-menu-down li ul li ul {
+  left: 12.5em;
+  top: -1px;
+}
+
+ul.nice-menu-down .menuparent a {
+  background: transparent url(images/menu-arrows.png) right -17px no-repeat;
+  padding-right: 15px;
+}
+
+ul.nice-menu-down .menuparent li a {
+  background-color: #248cc2;
+  background-image: none;
+  padding: 0 0 0 20px;
+}
+
+ul.nice-menu-down .menuparent li a:hover {
+  background: #a1daf3 url(images/menu-arrows.png) no-repeat 5px -60px;
+}
+
+ul.nice-menu-down li.menuparent {
+  background-color: transparent;
+  background-image: none;
+}
+
+ul.nice-menu-down li.menuparent:hover,
+ul.nice-menu-down li.over {
+  background-color: transparent;
+  background-image: none;
+  /*background: transparent url(images/menu-arrows.png) right -10px no-repeat;*/
+}
+
+ul.nice-menu-down li li.menuparent {
+  background: transparent url(images/menu-arrows.png) left -60px no-repeat;
+}
+
+ul.nice-menu-down li li.menuparent:hover,
+ul.nice-menu-down li li.over {
+  background: transparent url(images/menu-arrows.png) left -60px no-repeat;
+}

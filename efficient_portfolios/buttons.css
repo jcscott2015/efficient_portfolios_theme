@@ -1,0 +1,131 @@
+/* -------------------------------------------------------------
+ *	BUTTONS
+ *
+ *  This style sheet manages styles for dynamic form buttons & link "buttons".
+ *  These styles can be overloaded with styles for sections or pages.
+ *  Dynamic tabs are also in this style sheet.
+ *
+ * Standard button heights:
+ *   blue: 24px
+ * -------------------------------------------------------------
+ */
+
+button, .btn
+{
+	cursor: pointer;
+	border-style: none;
+	border-width: 0; /* for IE */
+	background-color: transparent;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+button span, button em, a.btn span, a.btn em
+{
+	display: inline-block; /* needed for FF on Windows */
+	font-style: normal;
+	text-align: center;
+}
+
+/**
+ * IE6 doesn't support :hover on anything but anchor tags. The button:hover
+ * CSS calls will be ignored in IE6, but they will still function as buttons.
+ **/
+button:hover, a:hover.btn { color: #f26f1f; }
+
+.button-group { margin: 10px 0 }
+.button-group button { margin-right: 5px }
+
+/* orange */
+.orange
+{
+	font-family: "Trebuchet MS";
+	color: #000;
+	font-size: 1.05em !important; /* Equivalent for 14pt at 96 ppi - (14/12) * .9 = 1.05em */
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+a.btn.orange span, a.btn.orange em 
+{
+	line-height: 24px;
+	font-weight: bold;
+}
+
+button.orange span, button.orange em
+{
+	height: 24px;
+	line-height: 24px;
+	font-weight: bold;
+}
+
+.orange span
+{
+	padding-left: 4px;
+	background: url(images/btn-blue-orange.png) no-repeat left -48px;
+}
+
+.orange em
+{
+	padding-right: 14px;
+	background: url(images/btn-blue-orange.png) no-repeat right -72px;
+}
+
+button:hover.orange span, a:hover.orange span, 
+button:hover.orange em, a:hover.orange em, 
+button.orange.active span, a.orange.active span, 
+button.orange.active em, a.orange.active em 
+{
+	color: #fff;
+}
+
+/* Blue */
+.blue, .bluearrow
+{
+	font-family: "Trebuchet MS";
+	color: #00467f;
+	font-size: 1.05em !important; /* Equivalent for 14pt at 96 ppi - (14/12) * .9 = 1.05em */
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.bluearrow
+{
+	font-weight: normal;
+	padding: 3px 20px 3px 0;
+	line-height: 24px;
+	background: url(images/btn-blue-arrow-only.png) no-repeat right center;
+}
+
+a.btn.blue span, a.btn.blue em 
+{
+	line-height: 24px;
+	font-weight: bold;
+}
+
+button.blue span, button.blue em
+{
+	height: 24px;
+	line-height: 24px;
+	font-weight: bold;
+}
+
+.blue span
+{
+	padding-left: 4px;
+	background: url(images/btn-blue-orange.png) no-repeat;
+}
+
+.blue em
+{
+	padding-right: 14px;
+	background: url(images/btn-blue-orange.png) no-repeat right -24px;
+}
+
+button:hover.blue span, a:hover.blue span, 
+button:hover.blue em, a:hover.blue em, 
+button.blue.active span, a.blue.active span, 
+button.blue.active em, a.blue.active em 
+{
+	color: #f26f1f;
+}

@@ -1,0 +1,56 @@
+/* $Id$ */
+
+/* Fixed layout; standard sidebar placement */
+
+#page, .no-sidebars #content {
+}
+
+#sidebar-left {
+  width: 0px;
+  margin-right: -0px;
+}
+
+#sidebar-right {
+  width: 388px;
+  margin-left: 672px;
+  margin-right: -1060px;
+}
+
+#content {
+  margin-right: -1060px;
+}
+
+.sidebar-left #content {
+  width: 1060px;
+  margin-left: 0px;
+  margin-right: -1060px;
+}
+
+.sidebar-right #content {
+  width: 672px;
+  margin-right: -672px;
+}
+
+.two-sidebars #content {
+  width: 672px;
+  margin-left: 0px;
+  margin-right: -672px;
+}
+
+#sidebar-right {
+  background: transparent url(images/bg-divider-middle.png) repeat-y left top;
+}
+
+#sidebar-right-divider-top {
+  background: transparent url(images/bg-divider-top.png) no-repeat left top;
+}
+
+.main-home #sidebar-right-divider-top {
+  background: transparent url(images/bg-divider-top-home.png) no-repeat left top;
+}
+
+#sidebar-right-inner {
+  margin: 0;
+  padding: 0 10px 0 30px;
+  background: transparent url(images/bg-divider-bottom.png) no-repeat left bottom;
+}
